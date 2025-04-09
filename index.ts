@@ -1,16 +1,18 @@
-interface People {
-  name: string;
-  age: number;
-  greet: () => string;
+// interfaces vs types 
+// create two types called user and Admin
+// create a function that take either a user or an admin as an input and return string saying "Welcome , [name]".
+
+interface Admin{
+  name : string;
+  permisions : string;
 }
 
-let person : People = {
-  name: "Manpreet",
-  age: 19,
-  greet: () => {
-  return "h1"
-  }
-}
+interface User{
+  name : string;
+  age : number;
 
-let greeting = person.greet()
-console.log(greeting)
+type userOrAdmin = User | Admin}
+
+function greet(user: userOrAdmin){
+  console.log()
+}
